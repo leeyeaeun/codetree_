@@ -1,4 +1,5 @@
 a = 3
-b = 'c'
+b = 'C'
 
-print(a,"\n",b)
+print(a)
+print(b)
