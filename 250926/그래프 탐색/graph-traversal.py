@@ -10,7 +10,6 @@ for x,y in edges:
 
 
 visited = [False] * (n+1)
-visited[1] = True
 ans = 0
 
 def dfs(root):
@@ -22,6 +21,6 @@ def dfs(root):
             max_depth = max(max_depth, depth)
 
     return max_depth + 1
+dfs(1)
 
-
-print(dfs(1)-1)
+print(sum(visited) - 1)
