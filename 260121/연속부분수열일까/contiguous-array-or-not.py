@@ -3,7 +3,7 @@ N1,N2 = map(int,input().split())
 arr1 = list(map(int,input().split())) 
 arr2 = list(map(int,input().split())) 
 
-cnt = None
+cnt = 'No'
 
 for i in range(N1-N2+1):
     if arr1[i] == arr2[0]:
