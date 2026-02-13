@@ -5,13 +5,14 @@ Y, M, D = map(int, input().split())
 def is_lunar_year(Y,M,D):
     if Y % 4 == 0:
         if Y %100 ==0:
-            if Y % 400:
+            if Y % 400 == 0:
                 return True
-            else : return False
+            return False
         else:
             return True
     else:
         return False
+#print(is_lunar_year(1900,2,29))
 
 def is_real_day(Y,M,D):
         if M in [1,3,5,7,8,10,12]:
