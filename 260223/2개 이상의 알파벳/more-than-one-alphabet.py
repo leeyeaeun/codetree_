@@ -7,7 +7,7 @@ def isDifferent(A):
     for elem in arr:
         s.add(elem)
     
-    if len(s) > 3:
+    if len(s) >= 2:
         return 'Yes'
     return 'No'
 
