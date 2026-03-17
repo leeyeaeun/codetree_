@@ -1,11 +1,11 @@
 N = int(input())
 
 # Please write your code here.
-grid = [0] * (N+1) 
 from collections import deque
+
 q = deque()
 q.append((N))
-visited = [-1] * (N+1)
+visited = [-1] * (N+2)
 visited[N] = 0
 
 
@@ -22,8 +22,7 @@ def bfs():
 
         for nx in nxs:
             #print(nx)
-            if 0<= nx <N and visited[nx] == -1:
-        
+            if 0<= nx <= N+1 and visited[nx] == -1:
                 #print('True :', nx)
                 visited[nx] = visited[x] + 1
                 q.append(nx)
