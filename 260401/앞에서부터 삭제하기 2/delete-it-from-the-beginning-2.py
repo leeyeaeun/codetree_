@@ -6,10 +6,8 @@ arr = list(map(int, input().split()))
 meanlist = []
 import heapq 
 for i in range(n -2):
-    remain = arr[i+1:]
-    pq = []
-    for elem in remain:
-        heapq.heappush(pq,elem)
+    pq = arr[i+1:]
+    heapq.heapify(pq) 
     heapq.heappop(pq)
     mean = sum(pq)/ len(pq)
     heapq.heappush(meanlist, -mean)
