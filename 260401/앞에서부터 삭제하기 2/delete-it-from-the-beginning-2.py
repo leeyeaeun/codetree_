@@ -3,15 +3,22 @@ arr = list(map(int, input().split()))
 
 
 # Please write your code here.
-meanlist = []
+ans = 0
 import heapq 
-for i in range(n -2):
-    pq = arr[i+1:]
-    heapq.heapify(pq) 
-    heapq.heappop(pq)
-    mean = sum(pq)/ len(pq)
-    heapq.heappush(meanlist, -mean)
+pq = []
+suffix_sum = 0
 
-print(f"{-meanlist[0]:.2f}")
+for start in range(n -1 , 0, -1):
+    x = arr[start]
+    heapq.heappush(pq, x)
+    suffix_sum += x
+
+    # 원소가 2개 이상 있어야 최솟값 하나 빼고 평균 가능
+    if len(pq) >= 2:
+        mean = (suffix_sum - pq[0]) / (len(pq) - 1)
+        if mean > ans:
+            ans = mean
+
+print(f"{ans:.2f}")
 
     
