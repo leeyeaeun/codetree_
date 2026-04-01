@@ -14,3 +14,5 @@ for _ in range(m):
     bignum = - nbignum
     bignum -= 1
     heapq.heappush(pq, -bignum)
+
+print(pq[0])
