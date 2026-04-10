@@ -15,42 +15,25 @@ for command in str:
     
     if command == 'L':
         idx = Ls.index((dx,dy))
-        ndx,ndy = Ls[(idx + 1)%4]
-        nx = x + ndx
-        ny = y + ndy
-        if 0<=nx<N and 0<=ny<N :
-            ans += board[nx][ny]
-            
-            x = nx
-            y = ny
-            dx,dy = ndx, ndy
-        else:
-            continue
+        dx, dy = Ls[(idx + 1)%4]
+
     elif command == 'R':
         idx = Rs.index((dx,dy))
-
-        ndx,ndy = Rs[(idx + 1)%4]
-
-        nx = x + ndx
-        ny = y + ndy
-        if 0<=nx<N and 0<=ny<N :
-            ans += board[nx][ny]
-
-            x = nx
-            y = ny
-            dx,dy = ndx, ndy
-        else:
-            continue
+        #print(idx)
+        dx, dy = Rs[(idx + 1)%4]
+        #print(ndx,ndy)
 
     else:
         nx = x + dx
         ny = y + dy
-
         if 0<=nx<N and 0<=ny<N :
             x = nx
             y = ny
+            ans += board[x][y]
         else:
-            continue
+            continue            
+        
+        #print(board[nx][ny])
 
 
 print(ans)
