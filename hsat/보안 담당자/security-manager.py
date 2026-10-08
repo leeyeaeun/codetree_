@@ -14,10 +14,10 @@ check =  0 # 들어온 직원수 - 나간 직원수 차이 기록
 # 뒤에서부터 검사.
 
 for i in range(N-1, -1, -1):
-    if S[i] == '(':
+    if S[i] == '(': # 들어오다
         check +=1 
 
-    elif S[i] == ')':
+    elif S[i] == ')': # 나가다
         check -= 1
     
     else:
